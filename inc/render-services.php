@@ -24,14 +24,17 @@ function ca_render_service_page( $slug ) {
 }
 
 function ca_service_hero( $d, $slug ) {
+	$title    = ca_current_page_title( $d['title'] );
+	$subtitle = ca_current_page_excerpt( $d['subtitle'] );
+
 	ob_start(); ?>
 	<section class="page-hero">
 		<div class="page-hero-in">
 			<div class="page-hero-split">
 				<div class="page-hero-left">
-					<div class="page-crumb">Home <span>›</span> Services <span>›</span> <?php echo esc_html( $d['title'] ); ?></div>
-					<h1 class="page-title"><?php echo esc_html( $d['title'] ); ?></h1>
-					<p class="page-sub"><?php echo esc_html( $d['subtitle'] ); ?></p>
+					<div class="page-crumb">Home <span>›</span> Services <span>›</span> <?php echo esc_html( $title ); ?></div>
+					<h1 class="page-title"><?php echo esc_html( $title ); ?></h1>
+					<p class="page-sub"><?php echo esc_html( $subtitle ); ?></p>
 					<div class="page-badges">
 						<?php foreach ( $d['badges'] as $b ) : ?>
 							<span class="page-badge"><?php echo esc_html( $b ); ?></span>
@@ -67,7 +70,7 @@ function ca_service_overview( $d ) {
 			</div>
 			<div class="cta-acts reveal">
 				<a class="btn-green" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">Schedule Service →</a>
-				<a class="btn-green-call" href="tel:<?php echo CA_PHONE_RAW; ?>">📞 Call or Text <?php echo CA_PHONE; ?></a>
+				<a class="btn-green-call" href="tel:<?php echo esc_attr( ca_phone_raw() ); ?>">📞 Call or Text <?php echo esc_html( ca_phone() ); ?></a>
 			</div>
 		</div>
 	</section>
@@ -128,7 +131,7 @@ function ca_service_process( $d ) {
 				</ul>
 				<div class="warranty-acts">
 					<a class="btn-green" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">Schedule Now →</a>
-					<a class="btn-green-call" href="tel:<?php echo CA_PHONE_RAW; ?>">📞 Call or Text</a>
+					<a class="btn-green-call" href="tel:<?php echo esc_attr( ca_phone_raw() ); ?>">📞 Call or Text</a>
 				</div>
 			</div>
 		</div>
@@ -145,7 +148,7 @@ function ca_service_cta() {
 			<p class="sec-sub light center mx-auto">Available 24/7, 365 days a year. You'll always speak to a live agent — never an answering machine.</p>
 			<div class="cta-acts">
 				<a class="btn-green" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">Book Online →</a>
-				<a class="btn-green-call" href="tel:<?php echo CA_PHONE_RAW; ?>">📞 Call or Text <?php echo CA_PHONE; ?></a>
+				<a class="btn-green-call" href="tel:<?php echo esc_attr( ca_phone_raw() ); ?>">📞 Call or Text <?php echo esc_html( ca_phone() ); ?></a>
 			</div>
 		</div>
 	</section>

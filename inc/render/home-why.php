@@ -30,7 +30,7 @@ function ca_section_why() {
 			</div>
 			<div class="why-cta">
 				<a class="btn-green" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">Schedule Service Today →</a>
-				<a class="btn-green-call" href="tel:<?php echo CA_PHONE_RAW; ?>">📞 Call or Text <?php echo CA_PHONE; ?></a>
+				<a class="btn-green-call" href="tel:<?php echo esc_attr( ca_phone_raw() ); ?>">📞 Call or Text <?php echo esc_html( ca_phone() ); ?></a>
 			</div>
 		</div>
 	</section>

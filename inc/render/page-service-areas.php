@@ -24,7 +24,7 @@ function ca_render_service_areas_page() {
 				</div>
 				<div class="cta-acts mt-32 center">
 					<a class="btn-green" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">Schedule Service →</a>
-					<a class="btn-green-call" href="tel:<?php echo CA_PHONE_RAW; ?>">📞 Call <?php echo CA_PHONE; ?></a>
+					<a class="btn-green-call" href="tel:<?php echo esc_attr( ca_phone_raw() ); ?>">📞 Call <?php echo esc_html( ca_phone() ); ?></a>
 				</div>
 			</div>
 		</section>

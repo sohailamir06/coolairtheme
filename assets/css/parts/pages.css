@@ -81,6 +81,12 @@
 }
 
 .content-section { padding: 72px 40px; }
+.ca-page-content {
+	max-width: var(--max-w);
+	margin: 0 auto;
+	padding: 72px 40px;
+}
+.ca-page-content:empty { display: none; }
 .content-section.dark {
 	background: var(--navy);
 	padding: 48px 40px 64px;

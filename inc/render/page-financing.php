@@ -31,7 +31,7 @@ function ca_render_financing_page() {
 				</div>
 				<div class="cta-acts reveal mt-32">
 					<a class="btn-green" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">Get Pre-Approved →</a>
-					<a class="btn-green-call" href="tel:<?php echo CA_PHONE_RAW; ?>">📞 Call <?php echo CA_PHONE; ?></a>
+					<a class="btn-green-call" href="tel:<?php echo esc_attr( ca_phone_raw() ); ?>">📞 Call <?php echo esc_html( ca_phone() ); ?></a>
 				</div>
 			</div>
 		</section>

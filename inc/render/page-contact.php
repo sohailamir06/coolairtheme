@@ -3,9 +3,9 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 function ca_render_contact_page() {
 	$rows = [
-		[ '📞', 'Phone',   '<a href="tel:' . CA_PHONE_RAW . '">' . CA_PHONE . '</a><br>24/7/365 — real people, never a machine.' ],
-		[ '✉️', 'Email',   '<a href="mailto:' . esc_attr( CA_EMAIL ) . '">' . esc_html( CA_EMAIL ) . '</a><br>We reply within 1 business hour.' ],
-		[ '📍', 'Office',  CA_ADDRESS . '<br>Drop-ins welcome 8am–6pm.' ],
+		[ '📞', 'Phone',   '<a href="tel:' . esc_attr( ca_phone_raw() ) . '">' . esc_html( ca_phone() ) . '</a><br>24/7/365 — real people, never a machine.' ],
+		[ '✉️', 'Email',   '<a href="mailto:' . esc_attr( ca_email() ) . '">' . esc_html( ca_email() ) . '</a><br>We reply within 1 business hour.' ],
+		[ '📍', 'Office',  esc_html( ca_address() ) . '<br>Drop-ins welcome 8am–6pm.' ],
 		[ '🕐', 'Hours',   'Office: 7am–9pm Mon–Sat<br>Emergency dispatch: 24/7/365' ],
 	];
 	$service_options = [ 'AC Repair', 'AC Installation', 'AC Maintenance', 'Duct Services', 'Air Quality', 'Plumbing', 'Commercial', 'Emergency', 'Other' ];

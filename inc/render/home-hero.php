@@ -22,7 +22,7 @@ function ca_section_hero() {
 				<p class="hero-sub">Honest pricing, same-day service, and a team that treats your home like their own. South Florida's most trusted HVAC and plumbing company — Open 24/7, 365 days a year.</p>
 				<div class="hero-acts">
 					<a class="btn-green" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">Schedule Service →</a>
-					<a class="btn-outline-w" href="tel:<?php echo CA_PHONE_RAW; ?>">📞 <?php echo CA_PHONE; ?></a>
+					<a class="btn-outline-w" href="tel:<?php echo esc_attr( ca_phone_raw() ); ?>">📞 <?php echo esc_html( ca_phone() ); ?></a>
 				</div>
 				<div class="hero-checks">
 					<?php foreach ( $checks as $c ) : ?>
@@ -32,7 +32,7 @@ function ca_section_hero() {
 			</div>
 			<div class="hero-right">
 				<div class="hero-logo-card">
-					<img src="<?php echo CA_THEME_URI; ?>/assets/images/logo4t.png" alt="Cool Air USA" height="210">
+					<img src="<?php echo esc_url( ca_logo_url() ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" height="210">
 				</div>
 				<div class="hero-badges">
 					<?php foreach ( $badges as $b ) : ?>

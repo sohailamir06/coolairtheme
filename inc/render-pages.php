@@ -12,6 +12,10 @@ require_once CA_THEME_DIR . '/inc/render/page-service-areas.php';
 require_once CA_THEME_DIR . '/inc/render/page-legal.php';
 
 function ca_page_hero( $crumb, $title, $subtitle, $badges = [] ) {
+	$title    = ca_current_page_title( $title );
+	$subtitle = ca_current_page_excerpt( $subtitle );
+	$crumb    = is_singular( 'page' ) ? $title : $crumb;
+
 	ob_start(); ?>
 	<section class="page-hero">
 		<div class="page-hero-in">

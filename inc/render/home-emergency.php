@@ -34,7 +34,7 @@ function ca_section_emergency() {
 				</div>
 			</div>
 			<div class="emg-right">
-				<a class="btn-red emg-call" href="tel:<?php echo CA_PHONE_RAW; ?>">📞 <?php echo CA_PHONE; ?></a>
+				<a class="btn-red emg-call" href="tel:<?php echo esc_attr( ca_phone_raw() ); ?>">📞 <?php echo esc_html( ca_phone() ); ?></a>
 				<div class="emg-mini-grid">
 					<?php foreach ( $mini_stats as $s ) : ?>
 						<div class="emg-stat-mini">

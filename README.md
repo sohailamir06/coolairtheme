@@ -32,12 +32,17 @@ A custom Full Site Editing block theme for Cool Air USA HVAC & Plumbing.
    - `uv-lights`, `air-purifiers`, `air-filters`, `thermostats`
    - `plumbing`
 
-   Each child page should use the **Services** template (assigned via Page Attributes).
+   Each child page is auto-routed by its `page-{slug}.html` template. If WordPress does not auto-select it, assign the matching template in Page Attributes.
    Child page content can be left empty — the theme renders it from `inc/data/services.php`.
 
-4. **Set the homepage**: Settings → Reading → "A static page" → pick a "Home" page (or leave default; `front-page.html` will render automatically).
+4. **Set dynamic header/footer data**
+   - Appearance → Menus: assign menus to **Primary Header Menu**, **Mobile Menu**, footer columns, and legal links.
+   - Appearance → Customize → **Cool Air USA Company Details**: update phone, email, address, portal URL, top bar text, footer copy, and license number.
+   - Appearance → Editor: edit the Header/Footer template parts if you need to replace the default dynamic blocks.
 
-5. **Permalinks**: Settings → Permalinks → "Post name" (`/%postname%/`)
+5. **Set the homepage**: Settings → Reading → "A static page" → pick a "Home" page (or leave default; `front-page.html` will render automatically).
+
+6. **Permalinks**: Settings → Permalinks → "Post name" (`/%postname%/`)
 
 ## Architecture
 
@@ -122,7 +127,9 @@ Templates reference dynamic blocks like `<!-- wp:cool-air-usa/service-page /-->`
 - **Brands list**: `ca_brands()` in `inc/page-data.php`
 - **Reviews**: `ca_reviews()` in `inc/page-data.php`
 - **Cities by county**: `ca_counties()` in `inc/page-data.php`
-- **Phone / email / address / portal URL**: defined as constants at the top of `functions.php`
+- **Header/footer menus**: Appearance → Menus
+- **Phone / email / address / portal URL**: Appearance → Customize → Cool Air USA Company Details
+- **Page body content**: edit the page in WordPress; custom templates render page content after the preserved designed sections.
 - **Layout**: edit the relevant `inc/render/*.php` file
 - **Styles**: edit the relevant `assets/css/parts/*.css` file
 

@@ -3,7 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 function ca_section_process() {
 	$steps = [
-		[ 'Call or Book Online',  "Reach us at " . CA_PHONE . " or book online. We're open 24/7/365 — a real person in our office answers, never a machine." ],
+		[ 'Call or Book Online',  "Reach us at " . ca_phone() . " or book online. We're open 24/7/365 — a real person in our office answers, never a machine." ],
 		[ 'Tech Arrives Fast',    'A certified, factory-trained technician arrives in a fully stocked van — typically within hours, ready to diagnose and fix.' ],
 		[ 'Clear Flat-Rate Quote',"We explain what's wrong in plain English and give a flat-rate price before any work begins. No surprises." ],
 		[ 'Problem Solved',       'Repair done, system tested, invoice emailed with before & after photos. Comfort restored — guaranteed.' ],

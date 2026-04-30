@@ -19,9 +19,9 @@ function ca_render_privacy_page() {
 		[ 'How We Use Information', 'We use your information to schedule and provide service, follow up on appointments, send maintenance reminders, process payments, and respond to inquiries. We never sell your personal information to third parties.' ],
 		[ 'Information Sharing',    'We share information only with service partners necessary to deliver our services (payment processors, scheduling software, parts suppliers). All partners are bound by data protection requirements.' ],
 		[ 'Data Security',          'We protect your data using industry-standard security measures including encryption in transit, secure storage, and access controls. No method of transmission is 100% secure but we follow best practices.' ],
-		[ 'Your Rights',            'You may request a copy of your data, request corrections, or request deletion at any time by contacting us at ' . CA_EMAIL . '.' ],
+		[ 'Your Rights',            'You may request a copy of your data, request corrections, or request deletion at any time by contacting us at ' . ca_email() . '.' ],
 		[ 'Cookies',                'Our website uses cookies to remember preferences and analyze site usage. You can disable cookies in your browser settings.' ],
-		[ 'Contact',                'Privacy questions? Email ' . CA_EMAIL . ' or call ' . CA_PHONE . '.' ],
+		[ 'Contact',                'Privacy questions? Email ' . ca_email() . ' or call ' . ca_phone() . '.' ],
 	];
 	return ca_render_legal_doc( 'Privacy Policy', 'Last updated: January 2026', $sections );
 }
