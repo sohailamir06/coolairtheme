@@ -8,9 +8,10 @@ A custom Full Site Editing block theme for Cool Air USA HVAC & Plumbing.
    - Zip the `cool-air-usa/` folder
    - WP Admin → **Appearance → Themes → Add New → Upload Theme**
    - Activate it
+   - On activation, the theme sync creates the Home page, core pages, service pages, default menus, menu-location assignments, and static front-page setting.
 
 2. **Create the WordPress pages** (Pages → Add New)
-   The theme auto-routes pages by slug. Create these pages with the exact slugs below:
+   The theme auto-routes pages by slug and creates these pages automatically. If you delete one, recreate it with the exact slug below or bump `CA_ADMIN_SYNC_VERSION` in `inc/admin-sync.php` to run the sync again.
 
    | Page Title          | Slug                | Template (auto)              |
    |---------------------|---------------------|------------------------------|
@@ -26,7 +27,7 @@ A custom Full Site Editing block theme for Cool Air USA HVAC & Plumbing.
    | Terms of Service    | `terms-of-service`  | `page-terms-of-service.html` |
 
 3. **Create service pages** under `/services/{slug}/`:
-   Create a parent page **Services** (slug: `services`), then 13 child pages with these exact slugs:
+   The sync creates a parent page **Services** (slug: `services`) and 13 child pages with these exact slugs:
    - `ac-repair`, `ac-install`, `ac-maintenance`, `commercial`, `emergency`
    - `duct-cleaning`, `duct-repair`, `duct-install`
    - `uv-lights`, `air-purifiers`, `air-filters`, `thermostats`
@@ -119,6 +120,16 @@ Templates reference dynamic blocks like `<!-- wp:cool-air-usa/service-page /-->`
 | `cool-air-usa/brands-page`         | All 24 brand cards                                   |
 | `cool-air-usa/service-areas-page`  | Counties + city directory                            |
 | `cool-air-usa/legal-page`          | Privacy or Terms (`kind` attribute)                  |
+
+## Admin Sync
+
+The theme includes an idempotent admin sync in `inc/admin-sync.php`.
+
+- Runs on `after_switch_theme` and once from `admin_init` for administrators.
+- Creates missing Pages, service child pages, nav menus, and menu-location assignments.
+- Sets `Home` as the static front page and inserts `<!-- wp:cool-air-usa/homepage /-->` into the Home page content.
+- Does not overwrite existing menu items or existing page body content.
+- To re-run intentionally, update `CA_ADMIN_SYNC_VERSION` in `inc/admin-sync.php`.
 
 ## Customization
 

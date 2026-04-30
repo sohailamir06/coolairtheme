@@ -18,6 +18,7 @@ require_once CA_THEME_DIR . '/inc/page-data.php';
 require_once CA_THEME_DIR . '/inc/render-services.php';
 require_once CA_THEME_DIR . '/inc/render-pages.php';
 require_once CA_THEME_DIR . '/inc/render-home.php';
+require_once CA_THEME_DIR . '/inc/admin-sync.php';
 
 add_action( 'after_setup_theme', function () {
 	load_theme_textdomain( 'cool-air-usa', CA_THEME_DIR . '/languages' );
@@ -131,6 +132,13 @@ add_action( 'init', function () {
 	foreach ( ca_dynamic_block_definitions() as $block_name => $settings ) {
 		register_block_type( $block_name, $settings );
 	}
+
+	register_block_pattern( 'cool-air-usa/homepage-layout', [
+		'title'       => __( 'Cool Air USA Homepage Layout', 'cool-air-usa' ),
+		'description' => __( 'The default synced homepage structure.', 'cool-air-usa' ),
+		'categories'  => [ 'cool-air-usa' ],
+		'content'     => '<!-- wp:cool-air-usa/homepage /-->',
+	] );
 } );
 
 /**
