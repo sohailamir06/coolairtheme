@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-define( 'CA_ADMIN_SYNC_VERSION', '1.0.0' );
+define( 'CA_ADMIN_SYNC_VERSION', '1.0.1' );
 
 add_action( 'after_switch_theme', 'ca_sync_admin_structure' );
 add_action( 'admin_init', 'ca_maybe_sync_admin_structure' );

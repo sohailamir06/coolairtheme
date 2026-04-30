@@ -30,6 +30,12 @@
 			icon: 'admin-tools',
 		},
 		{
+			name: 'cool-air-usa/services-page',
+			title: __( 'Services Page', 'cool-air-usa' ),
+			description: __( 'Services landing page layout.', 'cool-air-usa' ),
+			icon: 'screenoptions',
+		},
+		{
 			name: 'cool-air-usa/about-page',
 			title: __( 'About Page', 'cool-air-usa' ),
 			description: __( 'About page layout.', 'cool-air-usa' ),

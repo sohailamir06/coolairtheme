@@ -15,6 +15,7 @@ define( 'CA_ADDRESS',   '3901 NW 16th St, Fort Lauderdale, FL 33311' );
 define( 'CA_PORTAL',    'http://coolairusa.myservicetitan.com' );
 
 require_once CA_THEME_DIR . '/inc/page-data.php';
+require_once CA_THEME_DIR . '/inc/dynamic-content.php';
 require_once CA_THEME_DIR . '/inc/render-services.php';
 require_once CA_THEME_DIR . '/inc/render-pages.php';
 require_once CA_THEME_DIR . '/inc/render-home.php';
@@ -176,6 +177,12 @@ function ca_dynamic_block_definitions() {
 			'description'     => 'Dynamic service page content based on the current page slug.',
 			'icon'            => 'admin-tools',
 			'render_callback' => 'ca_render_service_page_block',
+		],
+		'cool-air-usa/services-page' => $common + [
+			'title'           => 'Services Page',
+			'description'     => 'Services landing page layout.',
+			'icon'            => 'screenoptions',
+			'render_callback' => 'ca_render_services_page',
 		],
 		'cool-air-usa/about-page' => $common + [
 			'title'           => 'About Page',

@@ -2,19 +2,16 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 function ca_section_process() {
-	$steps = [
-		[ 'Call or Book Online',  "Reach us at " . ca_phone() . " or book online. We're open 24/7/365 — a real person in our office answers, never a machine." ],
-		[ 'Tech Arrives Fast',    'A certified, factory-trained technician arrives in a fully stocked van — typically within hours, ready to diagnose and fix.' ],
-		[ 'Clear Flat-Rate Quote',"We explain what's wrong in plain English and give a flat-rate price before any work begins. No surprises." ],
-		[ 'Problem Solved',       'Repair done, system tested, invoice emailed with before & after photos. Comfort restored — guaranteed.' ],
-	];
+	$content = ca_home_content();
+	$section = $content['process'];
+	$steps   = $section['steps'];
 	ob_start(); ?>
 	<section class="section process-section" data-process>
 		<div class="sec-in">
 			<div class="reveal process-head">
-				<div class="sec-label">Simple &amp; Transparent</div>
-				<h2 class="sec-title">From Call to Cool in 4 Steps</h2>
-				<p class="sec-sub">We make it easy. Here's exactly what happens the moment you reach out.</p>
+				<div class="sec-label"><?php echo wp_kses_post( $section['label'] ); ?></div>
+				<h2 class="sec-title"><?php echo wp_kses_post( $section['title'] ); ?></h2>
+				<p class="sec-sub"><?php echo wp_kses_post( $section['subtitle'] ); ?></p>
 			</div>
 			<div class="process-road">
 				<div class="process-road-base"></div>
@@ -45,8 +42,8 @@ function ca_section_process() {
 				<?php foreach ( $steps as $i => $st ) : ?>
 					<div class="proc-step reveal d<?php echo $i + 1; ?>" data-step="<?php echo $i; ?>">
 						<div class="proc-num"><?php echo $i + 1; ?></div>
-						<div class="proc-title"><?php echo esc_html( $st[0] ); ?></div>
-						<p class="proc-desc"><?php echo esc_html( $st[1] ); ?></p>
+						<div class="proc-title"><?php echo esc_html( $st['title'] ); ?></div>
+						<p class="proc-desc"><?php echo esc_html( $st['description'] ); ?></p>
 					</div>
 				<?php endforeach; ?>
 			</div>
